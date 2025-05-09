@@ -1,0 +1,18 @@
+<ion-grid>
+  <ion-row>
+    @for (item of items; track item) {
+      <ion-col size="6">
+        <ion-card class="info-card">
+          <ion-card-content class="info-content">
+            <ion-icon src="assets/icon/Spark.svg" class="icon"></ion-icon>
+            <div>
+              <div class="title">{{ item.title }}</div>
+              <div class="subtitle">{{ item.subtitle }}</div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    }
+  </ion-row>
+</ion-grid>
+

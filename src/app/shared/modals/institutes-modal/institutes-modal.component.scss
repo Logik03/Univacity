@@ -1,0 +1,210 @@
+ion-header {
+    --background: white;
+  }
+  
+  ion-content {
+    --background: white;
+  }
+
+  .search-container {
+    padding: 0 7px;
+  }
+
+  ion-searchbar {
+    --border-radius: 8px !important;
+    background: inherit;
+    --box-shadow: 0 0 0 1px rgba(209, 209, 209, 0.82);
+    --color: #333;
+    --placeholder-color: #888888;
+    --placeholder-font-weight:400;
+    --icon-color: #666;
+    --clear-button-color: #666;
+    margin-bottom: 8px;
+    ::ng-deep .searchbar-input {
+        text-align: left !important;
+        padding-left: 12px !important;
+      }
+  }
+  ion-searchbar::part(input) {
+    --padding-start: 12px !important;
+    text-align: left !important;
+  }
+
+  .institute-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px;
+  }
+
+  .institute-item.selected {
+    --background: #F6F6F6;
+    --border-radius:10px
+  }
+
+  .institute-content {
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+
+  .logo-container {
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .university-logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .institute-details {
+    flex: 1;
+  }
+
+  .institute-name {
+    font-size: 13px;
+    font-weight: 400;
+    //margin: 0 0 4px 0;
+    color: #5D5D5D;
+  }
+
+  .institute-country {
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    color: #666666;
+  }
+
+  .institute-country ion-icon {
+    margin-right: 4px;
+    font-size: 16px;
+  }
+
+  .program-count {
+    background-color: #EEF7FF;
+    color: #184EC9;
+    font-size: 10px;
+    font-weight: 400;
+    padding: 4px 8px;
+    border-radius: 12px;
+    margin-right: 16px;
+    align-self: flex-start;
+  }
+  ion-radio::part(container) {
+    width: 17px;
+    height: 17px;
+  }
+  
+  ion-radio::part(mark) {
+    background: none;
+    transition: none;
+    transform: none;
+    border-radius: 0;
+  }
+  
+  ion-radio.radio-checked::part(container) {
+    background: inherit;
+    border: 1px solid #184EC9;
+  }
+  
+  ion-radio.radio-checked::part(mark) {
+    width: 5px;
+    height: 9px;
+    border-width: 0px 2px 2px 0px;
+    border-style: solid;
+    border-color: #184EC9;
+    transform: rotate(45deg);
+  }
+
+  .selection-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #d0d0d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .selection-circle.selected {
+    border-color: #3470df;
+  }
+
+  .empty-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .checkmark-icon {
+    color: #3470df;
+    font-size: 24px;
+    margin: -2px;
+  }
+
+  .no-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 16px;
+    color: #999;
+  }
+
+  .no-results-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+
+  ion-footer {
+    --background: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 30px 30px 0px 0px;
+    z-index: 10;
+  }
+
+  .footer {
+    --background: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .footer-container {
+    display: flex;
+    padding: 16px;
+    gap: 12px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    z-index: 10;
+    box-shadow: 0 -2px 10px #D1D1D1;
+  }
+
+  .clear-button {
+    color: #184EC9;
+    --background: #D9EDFF;
+    --border-radius: 24px;
+    --padding-start: 24px;
+    --padding-end: 24px;
+    height: 40px;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: none;
+  }
+
+  .results-button {
+    --background: #184EC9;
+    --border-radius: 24px;
+    --padding-start: 24px;
+    --padding-end: 24px;
+    flex: 1;
+    height: 40px;
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: none;
+
+}

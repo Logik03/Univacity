@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Filter</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="section-title">Tuition fee</div>
+  <div class="input-range-container">
+    <div class="input-container">
+      <div class="custom-input">
+        <span class="input-label">Min</span>
+        <div class="input-wrapper">
+          <ion-input
+            class="amount-input"
+            [(ngModel)]="minTuition"
+            inputmode="numeric"
+            (ionChange)="updateSliderFromInput('min')"
+            appCurrencyFormatter
+          ></ion-input>
+        </div>
+      </div>
+    </div>
+    <div class="input-container">
+      <div class="custom-input">
+        <span class="input-label">Max</span>
+        <div class="input-wrapper">
+          <ion-input
+            class="amount-input"
+            [(ngModel)]="maxTuition"
+            inputmode="numeric"
+            (ionChange)="updateSliderFromInput('max')"
+            appCurrencyFormatter
+          ></ion-input>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="range-container">
+    <ion-range 
+      #tuitionRangeSlider
+      [dualKnobs]="true" 
+      [min]="0" 
+      [max]="200000" 
+      [step]="1000" 
+      [(ngModel)]="tuitionRange" 
+      (ionChange)="updateInputFromSlider()"
+    ></ion-range>
+    <div class="range-labels-container">
+      <div class="label-marker" [style.left.%]="minKnobPosition">
+        <span class="label-value">{{formatLabel(tuitionRange.lower)}}</span>
+      </div>
+      <div class="label-marker" [style.left.%]="maxKnobPosition">
+        <span class="label-value">{{formatLabel(tuitionRange.upper)}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  @for (category of filterCategories; let first = $first; let last = $last; track category.id) {
+    <ion-item [lines]="last ? 'none' : 'inset'"  class="filter-item" [class.selected]="$first" (click)="navigateToSelection(category)">
+      <div>
+        <div class="category-title" [class.selected]="$first">{{ category.title }}</div>
+        <div class="selection-text">{{ category.selection }}</div>
+      </div>
+      <ion-icon [class.selected]="$first" name="chevron-forward-outline" slot="end"></ion-icon>
+    </ion-item>
+  }
+
+</ion-content>
+
+<ion-footer class="footer">
+  <div class="footer-container">
+    <ion-button fill="clear" class="clear-button" (click)="clearAll()">
+      Clear all
+    </ion-button>
+    <ion-button expand="block" class="results-button" (click)="viewResults()">
+      View 1024 Results
+      <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
+    </ion-button>
+  </div>
+</ion-footer>

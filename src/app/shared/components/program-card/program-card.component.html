@@ -1,0 +1,67 @@
+@for (p of programs; track p) {
+  <ion-card class="program-card" (click)="onCardClicked(p)">
+    <div class="card-image-wrapper">
+      <img [src]="p.imageUrl" alt="Program image" />
+      @if (p.isOfficialPartner) {
+        <span class="badge">
+          <ion-icon src="assets/icon/CircleWavyCheck.svg"></ion-icon>
+          Official Partner
+        </span>
+      }
+    </div>
+    <ion-card-content>
+      <div class="header">
+        <h2>{{ p.programTitle }}</h2>
+      </div>
+      <div class="university">
+        <ion-icon src="assets/icon/CircleWavyCheck.svg"></ion-icon>
+        {{ p.universityName }}
+      </div>
+      <ion-grid class="details-grid">
+        <ion-row class="compact-row">
+          <ion-col size="3">
+            <div class="detail-item">
+              <ion-icon src="assets/icon/flag (1).svg"></ion-icon> {{ p.country }}
+            </div>
+          </ion-col>
+          <ion-col size="3">
+            <div class="detail-item">
+              <ion-icon name="school-outline"></ion-icon> {{ p.degreeType }}
+            </div>
+          </ion-col>
+          <ion-col size="3">
+            <div class="detail-item">
+              <ion-icon name="time-outline"></ion-icon> {{ p.studyMode }}
+            </div>
+          </ion-col>
+          <ion-col size="3">
+            <div class="detail-item">
+              <ion-icon name="calendar-outline"></ion-icon> {{ p.duration }}
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div class="detail-item">
+              <ion-icon name="language-outline"></ion-icon> {{ p.language }}
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+      <ion-grid class="footer-grid">
+        <ion-row class="ion-align-items-center">
+          <ion-col size="8" class="ion-no-padding">
+            <span class="price">{{ p.price }}/per semester</span>
+          </ion-col>
+          <ion-col size="4" class="ion-text-end ion-no-padding">
+            <div class="actions">
+              <ion-icon name="share-social-outline"></ion-icon>
+              <ion-icon name="heart-outline"></ion-icon>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+}

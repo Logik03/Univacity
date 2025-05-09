@@ -1,0 +1,25 @@
+.filter-button {
+    position: relative;
+    font-size: 14px;
+    --color: #454545;
+    --padding-end: 0;
+    text-transform: none;
+    font-size: small;
+    ion-icon {
+        color:#454545;
+    }
+  
+    .badge {
+      background: #f66;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 11px;
+      width: 16px;
+      height: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      margin-left: 15px;
+    }
+  }

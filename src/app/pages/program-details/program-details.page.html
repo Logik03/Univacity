@@ -1,0 +1,56 @@
+<ion-content class="ion-padding">
+  <app-program-details-card (backClicked)="back($event)" [programs]="program"></app-program-details-card>
+  <div >
+    <ion-label class="ion-padding">Program Breakdown</ion-label>
+    <app-program-info-grid [items]="programInfoItems"></app-program-info-grid>
+  </div>
+  <div>
+    <ion-label class="ion-padding">Description</ion-label>
+    <app-expandable-section contentType="text"[text]="yourHeaderText"></app-expandable-section>
+  </div>
+  <div>
+    <ion-label class="ion-padding">Requirement</ion-label>
+    <app-expandable-section contentType="list"  [listItems]="pageListItems"></app-expandable-section>
+  </div>
+  <div>
+    <ion-label class="ion-padding">Structure</ion-label>
+    <app-expandable-section contentType="text" [text]="yourHeaderText"></app-expandable-section>
+  </div>
+  <div >
+    <ion-label class="ion-padding">Fees</ion-label>
+    <p class="service-text">Service fee is €50.<br>For international degree students, the tuition fee is € 726,72</p>
+    <app-program-info-grid [items]="feeInfoItems"></app-program-info-grid>
+  </div>
+  <div>
+    <ion-label class="ion-padding">Extra Information</ion-label>
+    <app-campus-list  [items]="extraItems"></app-campus-list>
+  </div>
+  <ion-footer class="course-footer">
+    <div class="footer-wrapper">
+      <div class="course-container">
+        <div class="course-header">
+          <div class="logo-container">
+            <img [src]="program.logoUrl || 'assets/default-logo.png'" alt="University logo" class="logo">
+          </div>
+          <div class="course-info">
+            <h2>{{ program.programTitle }}</h2>
+            <p class="fee">€363.36/per semester</p>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="footer-buttons">
+          <ion-button fill="clear" class="back-button" >
+            <ion-icon name="chevron-back-outline" slot="start"></ion-icon>
+            Back
+          </ion-button>
+          <ion-button expand="block" class="apply-button">
+            Apply now
+            <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </div>
+    
+  </ion-footer>
+  
+</ion-content>

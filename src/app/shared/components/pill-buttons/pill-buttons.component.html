@@ -1,0 +1,12 @@
+<div class="pill-tags-container">
+  @for (tag of tags; track tag; let i = $index) {
+    <div class="pill-tag">
+      <span class="tag-label">{{ tag.label }}</span>
+      <ion-icon name="close-outline" class="close-icon" (click)="removeTag(tag)"></ion-icon>
+    </div>
+  }
+  @empty {
+    <!-- Optional: Show this when there are no tags -->
+    <div class="empty-tags">No tags selected</div>
+  }
+</div>

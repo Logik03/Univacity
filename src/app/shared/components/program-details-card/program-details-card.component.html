@@ -1,0 +1,66 @@
+<ion-card class="program-card">
+  <div class="card-image-container">
+    <img [src]="programs.imageUrl" alt="Program Image">
+    <ion-button fill="clear" class="back-button" (click)="goBack()">
+      <span class="icon-wrapper">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </span>
+    </ion-button>
+    @if(programs.badgeText) {
+      <div class="badge-container">
+        <div class="badge">
+          <span class="badge-text">{{programs.badgeText}}</span>
+        </div>
+      </div>
+    }
+    <div class="action-buttons">
+      <ion-button fill="clear" class="action-button favorite">
+        <span class="icon-wrapper">
+          <ion-icon src="assets/icon/Heart.svg"></ion-icon>
+        </span>
+        
+      </ion-button>
+      <ion-button fill="clear" class="action-button share">
+        <span class="icon-wrapper">
+          <ion-icon src="assets/icon/ShareNetwork.svg"></ion-icon>
+        </span>
+       
+      </ion-button>
+    </div>
+  </div>
+  <ion-card-header>
+    @if (programs.programTitle) {
+      <ion-card-title>{{programs.programTitle}}</ion-card-title>
+    } @else {
+      <ion-card-title>Untitled Program</ion-card-title>
+    }
+  </ion-card-header>
+  <ion-card-content>
+    <div class="institution-info">
+      <ion-icon src="assets/icon/CircleWavyCheck.svg"></ion-icon>
+      <ion-text>{{programs.universityName}}</ion-text>
+      @if (programs.country) {
+        <ion-icon style="margin-left: 10px;" src="assets/icon/US - United States.svg"></ion-icon>
+        <ion-text>United States</ion-text>
+      }
+    </div>
+    @if (programs.programDescription) {
+      <ion-text>
+        <p class="program-description">{{programs.programDescription}}</p>
+      </ion-text>
+    }
+    <div class="divider"></div>
+    @if (programs.views || programs.impressions) {
+      <ion-item lines="full" class="stats-container">
+        @if (programs.views) {
+          <ion-icon name="eye-outline" slot="start"></ion-icon>
+          <ion-label>{{programs.views}} Views</ion-label>
+        }
+        @if (programs.impressions) {
+          <ion-icon name="trending-up-outline"></ion-icon>
+          <ion-label>{{programs.impressions}} Impression</ion-label>
+        }
+      </ion-item>
+    }
+  </ion-card-content>
+</ion-card>

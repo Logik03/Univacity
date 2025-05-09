@@ -1,0 +1,137 @@
+:host {
+    display: block;
+  }
+  
+  .program-card {
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    --box-shadow: none;
+    border: 1px solid #D1D1D1;
+    padding: 0.35rem !important;
+  }
+  
+  .card-image-wrapper {
+    position: relative;
+    height: 160px;
+    overflow: hidden;
+  
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  
+    // center notch cut-out
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 16px;
+      background: #fff;
+      border-radius: 0 0 24px 24px;
+    }
+  
+    .badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: #fff;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      ion-icon {
+        margin-right: 4px;
+        font-size: 14px;
+        color: #2b6cb0;
+      }
+      color: #2b6cb0;
+      font-weight: 500;
+    }
+  }
+  
+  ion-card-content {
+    padding: 16px;
+  
+    .header {
+      display: flex;
+      //align-items: left;
+      color: #333333;
+      font-size: small;
+  
+      .logo {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        object-fit: cover;
+        margin-right: 12px;
+      }
+  
+      h2 {
+        font-size: small;
+        font-weight: 500;
+        margin: 0;
+        flex: 1;
+        color: #333333;
+      }
+    }
+  
+    .university {
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      color: #666666;
+      font-weight: 500;
+      letter-spacing: 0;
+      ion-icon {
+        margin-right: 6px;
+        font-size: 16px;
+      }
+    }
+    .details-grid {
+        padding: 0;
+      }
+      ion-row.compact-row {
+        --ion-grid-padding: 0;
+        --ion-grid-column-padding: 4px;
+      }
+      
+      .detail-item {
+        display: flex;
+        align-items: center;
+        font-size: 10px;
+        color: #666666;
+      }
+      
+      .detail-item ion-icon {
+        margin-right: 4px;
+        font-size: 10px;
+        color: #666;
+      }
+      
+      .footer-grid {
+        padding: 0;
+        margin-top: 16px;
+      }
+      
+      .price {
+        font-size: 13px;
+        font-weight: 700;
+        color: #1E1E1E;
+      }
+      
+      .actions {
+        display: flex;
+        justify-content: flex-end;
+      }
+      
+      .actions ion-icon {
+        font-size: 22px;
+        margin-left: 16px;
+        color: #0047AB;
+      }
+  }
+  

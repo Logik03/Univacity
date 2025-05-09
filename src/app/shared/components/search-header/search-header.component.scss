@@ -1,0 +1,52 @@
+.search-dropdown {
+    --background: #fff;               
+    border-radius: 10px;            
+    border: 1px solid #ccc;            
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin: 8px 0;                   
+    height: 55px;  
+    ion-icon {
+        font-size: small;
+    }                   
+  }
+  
+  .search-dropdown:hover {
+    --border-color: #888;           
+  }
+  
+  .search-dropdown:focus-within {
+    --border-color: var(--ion-color-primary); 
+    box-shadow: 0 0 0 2px rgba(var(--ion-color-primary-rgb), 0.2);
+  }
+  
+  .search-dropdown .label-sub {
+    font-size: 12px;
+    color: #1E1E1E;
+    margin-bottom: 2px;
+  }
+  
+  .search-dropdown .label-main {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1E1E1E;
+  }
+ion-toolbar.sort-filter-toolbar {
+    --min-height: 48px;
+    --background: #fff;
+    display: flex;
+    justify-content: center;     
+    align-items: center;         
+    padding: 0 12px;           
+  }
+  ion-toolbar.sort-filter-toolbar app-sort-button,
+  ion-toolbar.sort-filter-toolbar app-filter-button {
+    margin: 0 8px;               
+  }
+  ion-toolbar.sort-filter-toolbar ion-button {
+    --padding-start: 0;
+    --padding-end: 0;
+    font-size: 14px;
+    color: #444;
+  }

@@ -1,0 +1,40 @@
+<ion-card class="expandable-card">
+  @if (contentType === 'text' && text) {
+    <ion-card-content class="text-container">
+      @if (!isExpanded()) {
+        <div class="truncated-text">{{ truncatedText }}</div>
+      } @else {
+        <div class="full-text">{{ text }}</div>
+      }
+    </ion-card-content>
+  }
+  @if (contentType === 'list' && listItems && listItems.length > 0) {
+    <ion-card-content>
+      <div class="divider"></div>
+      <ion-list >
+        @for (item of listItems;let first = $first; let last = $last; track $index) {
+          <ion-item [lines]="last ? 'none' : 'full'">
+            @if (item.icon) {
+              <ion-icon class="list-icon" [name]="item.icon" slot="start"></ion-icon>
+            }
+            <ion-label class="list-label" [innerHtml]="item.text"></ion-label>
+          </ion-item>
+        }
+      </ion-list>
+    </ion-card-content>
+  }
+  <div class="read-more-container">
+    <ion-button 
+      class="read-more-button" 
+      (click)="toggleExpand()"
+      expand="block"
+      shape="round"
+    >
+      {{ isExpanded() ? 'Show less' : 'Read more' }}
+      <ion-icon 
+        [name]="isExpanded() ? 'chevron-up-outline' : 'chevron-down-outline'"
+        slot="end"
+      ></ion-icon>
+    </ion-button>
+  </div>
+</ion-card>

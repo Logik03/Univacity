@@ -1,0 +1,21 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/"></ion-back-button>
+  </ion-buttons>
+
+  <ion-title>
+    <ion-item lines="none" class="search-dropdown">
+      <ion-label>
+        <div class="label-sub">What do you want to study?</div>
+        <div class="label-main">Computer Technologies</div>
+      </ion-label>
+      <ion-icon name="chevron-down-outline" slot="end"></ion-icon>
+    </ion-item>
+  </ion-title>
+</ion-toolbar>
+
+<ion-toolbar class="sort-filter-toolbar ion-text-center">
+  <app-sort-button (sortClicked)="onSortClicked()"></app-sort-button>
+  <app-filter-button [filterCount]="3" (filterClicked)="onFilterClicked()"></app-filter-button>
+</ion-toolbar>
+

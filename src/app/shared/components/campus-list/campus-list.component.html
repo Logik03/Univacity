@@ -1,0 +1,12 @@
+<ion-list>
+  <div class="divider"></div>
+  @for (item of items; let first = $first; let last = $last;  track item.text) {
+    <ion-item [lines]="last ? 'none' : 'full'" >
+      <ion-icon [name]="item.icon || 'warning-outline'" slot="start" color="medium"></ion-icon>
+      <ion-label>
+        <h2>{{ item.text }}</h2>
+        <p>{{ item.subtitle }}</p>
+      </ion-label>
+    </ion-item>
+  }
+</ion-list>

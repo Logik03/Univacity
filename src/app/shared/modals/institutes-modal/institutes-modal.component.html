@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Institutes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="search-container">
+    <ion-searchbar 
+      placeholder="Search institutes" 
+      [(ngModel)]="searchQuery"
+      (ionInput)="filterInstitutes()"
+      [debounce]="300"
+      search-icon="undefined"
+      animated
+    ></ion-searchbar>
+  </div>
+  <ion-list lines="none">
+    <ion-radio-group [value]="selectedInstituteId" (ionChange)="toggleSelection($event.detail.value)">
+      @for (institute of filteredInstitutes; track institute.id) {
+        <ion-item class="institute-item" [class.selected]="institute.selected" >
+          <ion-label class="institute-content">
+            <div class="logo-container">
+              <img [src]="institute.logo" alt="University logo" class="university-logo">
+            </div>
+            <div class="institute-details">
+              <h3 class="institute-name">{{ institute.name }}</h3>
+              <div class="institute-country">
+                <ion-icon src="assets/icon/flag (1).svg"></ion-icon> 
+                {{ institute.country }}
+              </div>
+            </div>
+            <div class="program-count">{{ institute.programs}}</div>
+          </ion-label>
+
+          <ion-radio
+            slot="end"
+            [value]="institute.id">
+          </ion-radio>
+        </ion-item>
+      }
+    </ion-radio-group>
+  </ion-list>
+
+  @if (filteredInstitutes.length === 0) {
+    <div class="no-results">
+      <ion-icon name="search-outline" class="no-results-icon"></ion-icon>
+      <p>No institutes found</p>
+    </div>
+  }
+</ion-content>
+
+<ion-footer class="footer">
+  <div class="footer-container">
+    <ion-button fill="clear" class="clear-button" (click)="clearAll()">
+      Clear all
+    </ion-button>
+    <ion-button expand="block" class="results-button" (click)="applyFilter()">
+      Apply Filter
+    </ion-button>
+  </div>
+</ion-footer>

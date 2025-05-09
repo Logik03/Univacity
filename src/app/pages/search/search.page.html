@@ -1,0 +1,16 @@
+<ion-header>
+  <app-search-header
+    [subject]="'Computer Science'"
+    [filterCount]="activeFilterCount"
+    (filterClicked)="onFilterModalOpen($event)"
+    (sortClicked)="onSortModalOpen()">
+  </app-search-header>
+</ion-header>
+
+<ion-content class="ion-padding" >
+  <app-pill-buttons (removeClicked)="handleRemoveTag($event)" [tags]="tags"></app-pill-buttons>
+  <div class="ion-margin ion-text-left search">
+    <ion-label>Search result</ion-label>
+  </div>
+  <app-program-card (cardClicked)="goToPage($event)" [programs]="programs"></app-program-card>
+</ion-content>

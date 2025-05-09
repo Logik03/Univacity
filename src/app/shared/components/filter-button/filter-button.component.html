@@ -1,0 +1,7 @@
+<ion-button fill="clear" class="filter-button" (click)="onFilterClick()">
+  <ion-icon src="assets/icon/filter.svg"></ion-icon>
+  Filter
+  @if (filterCount > 0) {
+    <div class="badge">{{ filterCount }}</div>
+  }
+</ion-button>

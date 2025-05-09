@@ -1,0 +1,35 @@
+.pill-tags-container {
+    //position: sticky;
+    //top: 0;
+    z-index: 10;
+    display: flex;
+    overflow-x: auto;
+    gap: 5px;
+    scrollbar-width: none;
+    
+    &::-webkit-scrollbar {
+      display: none; 
+    }
+  }
+  
+  .pill-tag {
+    display: flex;
+    align-items: center;
+    background-color: #f6f6f6;
+    border-radius: 20px;
+    padding: 8px 12px;
+    white-space: nowrap;
+    gap: 5px;
+    
+    .tag-label {
+      font-size: 14px;
+      color: #5D5D5D;
+      font-size: 500;
+    }
+    
+    .close-icon {
+      font-size: 16px;
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
